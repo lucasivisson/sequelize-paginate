@@ -28,10 +28,12 @@ const sequelizePaginate = require('sequelize-paginate')
 //   return User;
 // };
 
-const User = sequelize.define("Users", {
+const User = sequelize.define("User", {
   firstName: DataTypes.STRING,
   lastName: DataTypes.STRING,
   email: DataTypes.STRING,
+}, {
+  underscored: true
 });
 
 sequelizePaginate.paginate(User)
